@@ -472,77 +472,43 @@ section p {
 
 
 /* ----------------- RESPONSIVE: PHONES ----------------- */
+/* Mobile layout */
 @media (max-width: 600px) {
-  /* Sidebar on top, full width */
+  /* Make body a column layout */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Sidebar on top */
   .sidebar {
+    position: relative;
     width: 100%;
     height: auto;
-    position: relative;
     padding: 20px 15px;
-    flex-direction: column;
-    align-items: center;
+    flex-shrink: 0;
   }
 
-  /* Reduce profile picture size for mobile */
-  .profile-pic {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 10px;
-  }
-
-  /* Main content below sidebar */
+  /* Main content below */
   .main-content {
     margin-left: 0;
     padding: 20px 15px;
     max-width: 100%;
   }
 
-  /* Navigation: stack vertically */
+  /* Navigation bar smaller spacing */
   nav {
-    flex-direction: column;
-    gap: 12px;
+    gap: 20px;
   }
 
-  /* Projects: stack cards vertically, images full width */
+  /* Project cards stacked */
   .project-card {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
   .project-card img {
     width: 100%;
     height: auto;
-  }
-
-  /* Reduce font sizes slightly for better mobile fit */
-  .project-content h4 {
-    font-size: 16px;
-  }
-
-  .project-content p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .skill-category h3 {
-    font-size: 17px;
-  }
-
-  .skill-category ul {
-    line-height: 1.3;
-  }
-
-  .social-links {
-    gap: 10px;
-  }
-
-  .social-btn {
-    width: 40px;
-    height: 40px;
-  }
-
-  .social-btn span {
-    font-size: 14px;
   }
 }
