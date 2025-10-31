@@ -417,6 +417,47 @@ section p {
   text-decoration: underline;
 }
 
+.project-card img {
+  width: 180px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect: image grows slightly */
+.project-card img:hover {
+  transform: scale(1.2);  /* adjust the scale factor as you like */
+  z-index: 2;             /* ensures it overlays other content if necessary */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Education section styling */
 #education {
   margin-top: 30px;
