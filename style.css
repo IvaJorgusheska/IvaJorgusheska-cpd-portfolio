@@ -365,7 +365,8 @@ section p {
 
 .project-card {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 30px;
   background: #fafafa;
   padding: 20px;
@@ -373,6 +374,7 @@ section p {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: transform 0.2s ease;
 }
+
 .project-card p,
 .project-content p {
   text-align: justify;
@@ -384,12 +386,7 @@ section p {
   transform: translateY(-3px);
 }
 
-.project-card img {
-  width: 180px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 10px;
-}
+
 
 .project-content h4 {
   font-size: 18px;
@@ -417,21 +414,47 @@ section p {
   text-decoration: underline;
 }
 
-.project-card img {
-  width: 180px;
-  height: 140px;
+
+
+/* Hover effect: image grows slightly */
+.project-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Container that holds 1, 2, or 3 images in a row */
+.project-images {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.project-images img {
+  flex: 1;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: zoom-in;
 }
 
-/* Hover effect: image grows slightly */
-.project-card img:hover {
-  transform: scale(1.7);  /* adjust the scale factor as you like */
-  z-index: 2;             /* ensures it overlays other content if necessary */
+.project-images img:hover {
+  transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 2;
 }
 
+
+/* Mobile: stack images vertically */
+@media (max-width: 900px) {
+  .project-images {
+    flex-direction: column;
+  }
+
+  .project-images img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 /* Education section styling */
 #education {

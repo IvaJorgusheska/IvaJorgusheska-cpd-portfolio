@@ -125,29 +125,42 @@ I’m passionate about technological advancement and driven to stay at the foref
      <div class="projects-wide">
 
     <div class="project-card">
-      <img src="group_project.jpeg" alt="Autonomous robotic system project">
+      <div class="project-images">
+        <img src="group_project.jpeg" alt="Autonomous robotic system project">
+      </div>
       <div class="project-content">
         <h4>Autonomous Robotic System for Object Search, Localisation, and Manipulation</h4>
-        <p>Developed and integrated a full-stack autonomous robotic system capable of mapping, navigation, object detection, grasping, and task execution in a real-world environment. I focused on the vision and manipulator side of the system, especially their integration within the wider autonomy stack. This included RGB-D perception, 3D object localisation, and coordinated grasp execution through a distributed ROS2 architecture across multiple compute units. I also contributed extensively to the analysis and design of the overall software system, including mission planning through a finite-state machine, inter-module communication, and real-time data flow between perception, navigation, and actuation. Beyond implementation, the project followed a full engineering pipeline: requirements specification, verification matrices, stakeholder-driven design with professors acting as clients, iterative refinement based on feedback, and systematic validation of system performance.</p>
+        <p><strong>Goal:</strong> To develop a full-stack autonomous robot capable of mapping, navigating, detecting, and manipulating objects in a real-world environment.</p>
+        <p><strong>Contribution:</strong> I led the vision and manipulation subsystems, implementing RGB-D perception, 3D object localisation, and coordinated grasp execution within a distributed ROS2 architecture. I also designed key elements of the overall system architecture, including the finite-state machine for mission planning, inter-module communication protocols, and real-time data flow between perception, navigation, and actuation. Beyond implementation, I drove the engineering process — writing requirements specifications, verification matrices, and iterating on the design based on stakeholder feedback from professors acting as clients.</p>
         <div class="project-links">
           <a href="Final Design Review.pdf" target="_blank">📄 Report</a>
+          <a href="https://youtu.be/t42_L63nlLg" target="_blank">🎥 Video</a>
+          <a href="https://github.com/IvaJorgusheska/AERO62520-Robotic-Systems-Design-Project" target="_blank">💻 Code</a>
+
         </div>
       </div>
     </div>
 
+
+
     <div class="project-card">
-      <img src="fscil.png" alt="Few-shot continual learning project">
+      <div class="project-images">
+        <img src="fscil.png" alt="Few-shot continual learning project">
+      </div>
       <div class="project-content">
         <h4>Few-Shot Continual Learning for Robotics with CLIP</h4>
-        <p>As part of the CoRoLab Internship Program at the Manchester Centre for Robotics and AI, I am developing a research-driven Few-Shot Continual Learning (FSCL) approach for robotic perception using CLIP. After conducting a comprehensive literature review, I identified limitations in the visual representation component of existing CLIP-based incremental learning pipelines and began designing a novel method based on layer-wise knowledge distillation for CLIP Vision Transformers. My work explores how to preserve useful visual features while reducing catastrophic forgetting under extremely low-data conditions. I am also investigating complementary techniques including LoRA adaptation, teacher input augmentation such as random crops and perturbations, and optimal transport methods for improving representation alignment. The project involves literature synthesis, experimental design, implementation, benchmarking, dataset curation, and systematic evaluation across continual-learning settings relevant to robotics.</p>
-      </div>
+        <p><strong>Goal:</strong> To develop a Few-Shot Continual Learning approach that enables robots to learn new visual categories from very few examples without forgetting previously learned ones.</p>
+        <p><strong>Contribution:</strong> Following a comprehensive literature review, I identified weaknesses in the visual representation component of existing CLIP-based incremental learning pipelines. I then designed a novel method based on layer-wise knowledge distillation for CLIP Vision Transformers, and explored complementary techniques including LoRA adaptation, teacher input augmentation, and optimal transport for improved representation alignment. I was responsible for the full research cycle: literature synthesis, experimental design, implementation, benchmarking, and dataset curation.</p>      </div>
     </div>
 
     <div class="project-card">
-      <img src="drones pic.jpeg" alt="Drone Swarm Project">
+      <div class="project-images">
+        <img src="drones pic.jpeg" alt="Drone Swarm Project">
+      </div>
       <div class="project-content">
         <h4>Multi-Agent Reinforcement Learning for Cooperative Autonomous Navigation and Pursuit in Drone Swarms</h4>
-        <p>Developed a complete Multi-Agent Reinforcement Learning (MARL) framework from the ground up, including a custom simulation environment, modular PPO-based training pipeline, and visualization tools for real-time episode rendering. Extended the baseline PPO algorithm to handle partial observability and enable stable cooperative behavior among multiple autonomous drones. The framework was successfully deployed on physical Crazyflie 2.1 drones, demonstrating efficient real-world performance and robust swarm coordination. This project highlights the potential of lightweight, general-purpose algorithms for scalable and resource-efficient multi-agent robotics.</p>
+        <p><strong>Goal:</strong> To build a MARL system enabling a swarm of autonomous drones to cooperatively pursue a target, and to validate it on real hardware.</p>
+        <p><strong>Contribution:</strong> I designed and built the entire framework from scratch — including a custom simulation environment, a modular PPO-based training pipeline, and real-time visualisation tools. I extended the baseline PPO algorithm to support partial observability and stable multi-agent cooperation, then deployed the trained policies onto physical Crazyflie 2.1 drones, achieving robust real-world swarm coordination.</p>        
         <div class="project-links">
           <a href="thesis report.pdf" target="_blank">📄 Report</a>
           <a href="https://youtu.be/egcTCtq6Dck" target="_blank">🎥 Video</a>
@@ -155,11 +168,44 @@ I’m passionate about technological advancement and driven to stay at the foref
       </div>
     </div>
 
+
     <div class="project-card">
-      <img src="cog rob pic.png" alt="robotics research">
+      <div class="project-images">
+        <img src="dobc_pic.jpeg" alt="UAV Feedback Control with PID and DOBC">
+      </div>
+      <div class="project-content">
+        <h4>UAV Position Stabilisation with PID and Disturbance Observer-Based Control (DOBC)</h4>
+        <p><strong>Goal:</strong> To design, tune, and validate a feedback controller for 3D position stabilisation of a UAV, combining a PID baseline with DOBC as an advanced disturbance rejection method, tested in both simulation and on a real DJI Tello quadcopter.</p>
+        <p><strong>Contribution:</strong> I designed a cascade architecture where a position PID generates velocity setpoints, and a DOBC layer corrects them for persistent disturbances such as wind, motor asymmetry, and aerodynamic drag. The observer models drone velocity as a first-order lag and estimates the disturbance as the difference between actual and modelled velocity, smoothed via an EMA filter. I implemented a proximity gate so DOBC corrections only activate during the hold phase (error below 0.5 m), preventing observer lag from interfering with the PID during approach. Tuning followed Ziegler-Nichols sequential isolation — each gain was varied independently to the stability boundary, with the derivative gain derated to half the Z-N prediction to avoid noise amplification. Real-drone experiments used Vicon motion capture to quantify hold error, and I systematically varied speed, DOBC gain, and gate thresholds across sessions to identify performance limits. Key findings included that the D term at 10 Hz cannot damp momentum from fast approaches, and that raising the DOBC gate caused yaw integral saturation by coupling disturbance corrections into the yaw channel — an unmodelled interaction that pointed to the need for yaw-DOBC decoupling in future work.</p>
+        <div class="project-links">
+          <a href="https://youtu.be/EdtELk0f5oE" target="_blank">🎥 Video</a>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-images">
+        <img src="lidar_pic.jpeg" alt="LiDAR Characterisation">
+      </div>
+      <div class="project-content">
+        <h4>Characterisation of the SLAMTEC RPLIDAR A2M12 for Autonomous Mobile Robot Perception</h4>
+        <p><strong>Goal:</strong> To empirically characterise the SLAMTEC RPLIDAR A2M12 lidar unit across key performance metrics — range, accuracy, vertical tolerance, spatial resolution, and small-object detection — and translate the findings into concrete integration recommendations for the Leo Rover's autonomous perception stack.</p>
+        <p><strong>Contribution:</strong> I co-designed and executed a structured experimental campaign using SLAMTEC RoboStudio for direct access to raw triangulation returns, with all experiments repeated five times for reliability. I contributed to geometric calibration to establish a precise baseline, and ran experiments covering minimum and maximum range on white and black targets, distance accuracy from 0.5 to 5 metres, vertical detection angle by converting target dropout height to angle, spatial resolution at both 10 and 5 Hz scan rates, and small-object detectability using progressively smaller reflectors. I then analysed the results against our initial hypotheses and derived practical implications: white and black surfaces produced near-identical ranges indoors, contradicting the reflectivity hypothesis but confirming consistent obstacle visibility; distance was overestimated systematically, remaining reliable within 3 m but drifting at longer range; vertical sensing was extremely narrow (0.2°–0.6°) and shrank with distance, creating blind zones for obstacles above or below the scan plane; spatial resolution was spot-size-limited at close range and sampling-limited at long range, with a 40% improvement at 5 Hz; and small objects under ~20 mm became undetectable below one metre. Based on these findings, I contributed to recommendations for the Leo Rover integration: applying a short-range bias correction for SLAM, increasing obstacle margins for slender objects, and mounting the lidar with a slight downward pitch to reduce vertical blind zones.</p>
+        <div class="project-links">
+          <a href="https://youtu.be/Q7WIki8TnUo" target="_blank">🎥 Video</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-images">
+        <img src="cog rob pic.png" alt="robotics research">
+      </div>
       <div class="project-content">
         <h4>Deep Learning in Cognitive Robotics – UAV Applications and Vision Models </h4>
-        <p>I conducted an extensive research study on the integration of Deep Neural Networks (DNNs) in autonomous Unmanned Aerial Vehicles (UAVs), producing a comprehensive, survey-style analysis of the latest advances in deep learning for robotic vision, navigation, and decision-making. The work critically reviewed state-of-the-art architectures such as CNNs, LSTMs, and reinforcement learning frameworks, assessing their roles in obstacle avoidance, surveillance, and multi-UAV coordination. I evaluated both technical and ethical limitations in current research and identified emerging trends in lightweight and adaptive DNN models for real-time aerial autonomy. Complementary experiments using MLP, CNN, and ResNet-18 on the CIFAR-100 dataset demonstrated practical understanding of network optimization and performance benchmarking. </p>
+        <p><strong>Goal:</strong> To critically survey the state of deep learning for autonomous UAVs and complement the analysis with hands-on benchmarking experiments.</p>
+        <p><strong>Contribution:</strong> I produced a comprehensive survey-style analysis covering DNNs in robotic vision, navigation, and decision-making for UAVs, critically evaluating architectures such as CNNs, LSTMs, and RL frameworks across tasks including obstacle avoidance, surveillance, and multi-UAV coordination. I assessed both technical limitations and ethical considerations, and ran benchmarking experiments comparing MLP, CNN, and ResNet-18 on CIFAR-100 to ground the analysis practically.</p>        
         <div class="project-links">
           <a href="cog_rob_report.pdf" target="_blank"> 📄 Report</a>
         </div>
@@ -173,10 +219,13 @@ I’m passionate about technological advancement and driven to stay at the foref
     <h3>Artificial Intelligence and Machine Learning</h3>
 
     <div class="project-card">
-      <img src="ml pic.png" alt="ml report">
+      <div class="project-images">
+        <img src="ml pic.png" alt="ml report">
+      </div>
       <div class="project-content">
         <h4>Machine Learning Laboratory – Linear Classification and Optimization Analysis</h4>
-        <p>This lab focused on the mathematical foundations of machine learning, particularly linear classification and optimization through gradient descent. I derived the gradient of the hinge loss function with L2 regularization step-by-step, expressed it in vectorized form, and formulated the weight update equation analytically. The study examined how the learning rate affects convergence, cost reduction, and classification accuracy across training and testing sets. In the second part, I applied these principles to a neural network model for air quality prediction, analyzing optimizer performance (SGD vs. ADAM) and validating convergence behavior. The work demonstrated strong understanding of mathematical modeling, derivative computation, and optimization dynamics in supervised learning.</p>
+        <p><strong>Goal:</strong> To develop a rigorous mathematical understanding of linear classification and gradient-based optimisation, and apply it to a real neural network task.</p>
+        <p><strong>Contribution:</strong> I derived the gradient of the hinge loss with L2 regularisation from first principles, expressed it in vectorised form, and formulated the weight update analytically. I then systematically analysed how learning rate affects convergence and accuracy, and applied these principles to a neural network for air quality prediction, comparing SGD and ADAM optimisers and validating convergence behaviour empirically.</p>
         <div class="project-links">
           <a href="ML_report.pdf" target="_blank">📄 Report</a>
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/02_AI_and_Machine_Learning/ML_ Classification_Optimization" target="_blank">💻 Code</a>
@@ -184,41 +233,44 @@ I’m passionate about technological advancement and driven to stay at the foref
       </div>
     </div>
 
-    <div class="project-card">
+    <!-- <div class="project-card">
       <img src="ai vehicles pic.png" alt="robotics research">
       <div class="project-content">
         <h4>Features for Estimating Autonomous Vehicle Poses</h4>
-        <p>Implemented and analyzed feature-matching algorithms for visual odometry (VO) in autonomous vehicle navigation using the KITTI dataset. Developed three matching strategies: distance thresholding, nearest neighbour, and nearest neighbour distance ratio (NNDR) to estimate vehicle trajectories through sequential image analysis. Using SIFT-based keypoint detection and OpenCV’s BFMatcher, I compared feature similarity metrics to improve pose estimation accuracy. The work demonstrated how robust feature correspondence underpins reliable VO performance, particularly in complex, real-world motion scenarios. This project strengthened my understanding of computer vision, geometric reasoning, and the link between low-level image features and high-level motion inference in autonomous systems.</p>
+        <p><strong>Goal:</strong> To implement and compare feature-matching strategies for visual odometry in autonomous vehicle navigation using real-world driving data.</p>
+        <p><strong>Contribution:</strong> I implemented three feature-matching pipelines — distance thresholding, nearest neighbour, and NNDR — using SIFT keypoints and OpenCV's BFMatcher on the KITTI dataset. I compared their performance in estimating vehicle trajectories through sequential image analysis, evaluating trade-offs in accuracy and robustness under complex real-world motion.</p>        
         <div class="project-links">
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/02_AI_and_Machine_Learning/Autonomous_Vehicle_Pose_Estimation" target="_blank">💻 Code</a>
         </div>
       </div>
-    </div> 
+    </div>  -->
 
 
-    <div class="project-card">
+    <!-- <div class="project-card">
       <img src="reversi pic.png" alt="robotics research">
       <div class="project-content">
         <h4>Reversi Game Agent – Minimax with Alpha–Beta Pruning</h4>
-        <p>In this project, I implemented an intelligent Reversi (Othello) game agent in Java, designing a minimax search algorithm enhanced with alpha–beta pruning to optimize decision-making efficiency. The agent evaluates board states using a heuristic evaluation function that weights positional advantages such as corners and edge stability. I engineered an efficient recursive search procedure with adjustable depth control and pruning to minimize computational overhead while maintaining strategic accuracy. The program consistently outperformed baseline agents using random or sequential move selection, demonstrating the effectiveness of pruning in reducing search complexity. This project strengthened my understanding of game tree exploration, heuristic optimization, and AI search algorithms for adversarial environments.</p>
+        <p><strong>Goal:</strong> To build an intelligent game-playing agent for Reversi that makes strategic decisions efficiently under computational constraints.</p>
+        <p><strong>Contribution:</strong> I designed and implemented a minimax search algorithm with alpha–beta pruning in Java, including a heuristic evaluation function weighting positional factors such as corner control and edge stability. I engineered adjustable depth control and tuned the pruning strategy to balance computational cost against decision quality, consistently outperforming random and sequential baseline agents.</p>        
         <div class="project-links">
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/02_AI_and_Machine_Learning/Autonomous_Reversi_Game_Agent" target="_blank">💻 Code</a>
         </div>
       </div>
-    </div> 
+    </div>  -->
 
 
-    <div class="project-card">
+    <!-- <div class="project-card">
       <img src="const pic.png" alt="robotics research">
       <div class="project-content">
         <h4>Constraint Satisfaction and Pandiagonal Magic Squares</h4>
-        <p>This project focused on applying constraint satisfaction techniques to logic-based and mathematical problems using Python’s constraint module. I modelled complex problems, including a traveller scheduling puzzle and the generation of magic and pandiagonal magic squares, as constraint satisfaction problems (CSPs). I designed constraints defining variable dependencies, mutual exclusions, and arithmetic relationships, enabling the solver to identify consistent solutions efficiently. Through this, I demonstrated strong logical reasoning, formal problem abstraction, and the ability to translate natural language conditions into precise computational rules. The project deepened my understanding of search space reduction, CSP heuristics, and computational logic in AI problem-solving.</p>
+        <p><strong>Goal:</strong> To apply constraint satisfaction techniques to solve complex combinatorial and logic problems computationally.</p>
+        <p><strong>Contribution:</strong> I modelled two problem types — a traveller scheduling puzzle and pandiagonal magic squares — as formal CSPs using Python's constraint module. I designed the variable structures, constraint relationships, and arithmetic rules for each, translating natural language problem statements into precise computational representations to enable efficient solution finding.</p>        
         <div class="project-links">
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/02_AI_and_Machine_Learning/Constraints" target="_blank">💻 Code</a>
         </div>
       </div>
     </div> 
-
+ -->
 
 
   </div>
@@ -228,52 +280,58 @@ I’m passionate about technological advancement and driven to stay at the foref
     <h3>Computer Vision</h3>
 
     <div class="project-card">
-      <img src="report_pic.png" alt="Robotic vision classification project">
+      <div class="project-images">
+        <img src="report_pic.png" alt="Robotic vision classification project">
+      </div>
       <div class="project-content">
         <h4>Robust Object Classification for Robotics Using Classical Descriptors, CNNs, and Transfer Learning</h4>
-        <p>Designed and implemented end-to-end object recognition pipelines for robotics, comparing classical feature-based approaches with modern deep learning models across multiple benchmark and robot-centred datasets. The project evaluated SIFT/ORB with Bag-of-Words and SVMs alongside custom CNNs, transfer learning with ResNet-18 and MobileNetV2, and a multi-backbone ensemble model. I carried out systematic hyperparameter optimisation and ablation studies across CIFAR-100, RGB-D Object, and iCubWorld data to analyse how model choice, feature structure, and fine-tuning strategy affect performance. A central outcome of the project was identifying when classical pipelines remain competitive and when deep learning becomes essential, particularly under changes in resolution, realism, and robustness requirements in robotic perception. The work combined implementation, experimental design, critical analysis, and research-style reporting.</p>
+        <p><strong>Goal:</strong> To systematically compare classical and deep learning approaches to object recognition across datasets relevant to robotic perception.</p>
+        <p><strong>Contribution:</strong> I designed and implemented multiple end-to-end recognition pipelines: SIFT/ORB with Bag-of-Words and SVMs, custom CNNs, fine-tuned ResNet-18 and MobileNetV2, and a multi-backbone ensemble model. I conducted hyperparameter optimisation and ablation studies across CIFAR-100, RGB-D Object, and iCubWorld datasets, identifying the conditions under which classical pipelines remain competitive versus when deep learning becomes necessary in robotic perception.</p>        
         <div class="project-links">
           <a href="Cognitive Robotics and Computer Vision Report.pdf" target="_blank">📄 Report</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
+    <!-- <div class="project-card">
       <img src="vision 1 pic.png" alt="Edge Detection">
       <div class="project-content">
         <h4>Custom Edge Detection Pipeline in Python</h4>
-        <p>Implemented a full computer vision edge detection pipeline from scratch in Python. Built manual functions for image padding, convolution, smoothing, gradient computation, and thresholding using Sobel and Gaussian filters. Explored the effect of kernel size and sigma on noise reduction and detail preservation, and implemented Laplacian of Gaussian for precise edge localization.</p>
-      <div class="project-links">
+        <p><strong>Goal:</strong> To implement a complete edge detection system from scratch, without relying on high-level library functions, to build deep understanding of the underlying computer vision principles.</p>
+        <p><strong>Contribution:</strong> I built all components manually: image padding, convolution, Gaussian smoothing, Sobel gradient computation, and thresholding. I systematically investigated how kernel size and sigma influence the trade-off between noise reduction and detail preservation, and implemented Laplacian of Gaussian for precise edge localisation.</p>
+        <div class="project-links">
           <a href="vision1 report.pdf" target="_blank">📄 Report (the code is included in the Appendix)</a>
           
         </div>
       </div>
-    </div>
-
+    </div> -->
+<!-- 
     <div class="project-card">
       <img src="vision2 pic.png" alt="Harris Corner Detection">
       <div class="project-content">
         <h4>Harris Corner Detection and Feature Matching</h4>
-        <p>The objective of this project is to implement the Harris Corner Detector from scratch using Python, demonstrating its role in identifying stable keypoints in computer vision applications. The project includes developing a complete image processing pipeline with reflection padding, Gaussian smoothing, and gradient-based corner response computation. Performance was evaluated under varying illumination, noise, and geometric transformations to test robustness and repeatability. Additionally, ORB descriptors and feature matching using SSD and Lowe’s Ratio Test were applied for comparison. The results highlight the importance of preprocessing and parameter tuning for achieving accurate and reliable feature detection in real-world vision systems.</p>
+        <p><strong>Goal:</strong> To implement and evaluate the Harris Corner Detector from scratch, assessing its robustness under real-world image variations.</p>
+        <p><strong>Contribution:</strong> I built the full pipeline manually — reflection padding, Gaussian smoothing, and gradient-based corner response computation — without relying on library implementations. I evaluated detector performance under varying illumination, noise, and geometric transformations, and applied ORB descriptors with SSD and Lowe's Ratio Test for comparison, analysing how preprocessing and parameter tuning affect reliability.</p>        
         <div class="project-links">
           <a href="vision2 report.pdf" target="_blank">📄 Report (the code is included in the Appendix)</a>
           
         </div>
       </div>
-    </div>
-
+    </div> -->
+<!-- 
     <div class="project-card">
       <img src="vision3 pic.png" alt="Stereo Vision">
       <div class="project-content">
         <h4>Stereo Vision and Depth-Based Image Processing</h4>
-        <p>Implemented a stereo vision system in Python using OpenCV to estimate depth from dual-camera imagery and reconstruct 3D scenes through disparity mapping and triangulation. Developed an interactive pipeline allowing real-time tuning of stereo parameters and visualization of point clouds from computed depth maps. Extended the system to simulate smartphone-style portrait mode by segmenting the foreground and applying depth-selective background blurring or grayscale conversion. The project demonstrates practical computer vision applications in 3D perception and depth-based image enhancement.</p>
-      <div class="project-links">
+        <p><strong>Goal:</strong> To implement a stereo vision system capable of estimating depth from dual-camera imagery and enabling depth-aware image manipulation.</p>
+        <p><strong>Contribution:</strong> I built a stereo vision pipeline in Python using OpenCV, implementing disparity mapping and triangulation for 3D scene reconstruction. I developed an interactive interface for real-time parameter tuning and point cloud visualisation, then extended the system to simulate portrait-mode photography by using the computed depth map to selectively blur or convert backgrounds.</p>
+        <div class="project-links">
           <a href="vision3 report.pdf" target="_blank">📄 Report (the code is included in the Appendix)</a>
           
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- Group 4: Natural Language Processing -->
@@ -281,10 +339,13 @@ I’m passionate about technological advancement and driven to stay at the foref
     <h3>Natural Language Processing</h3>
 
     <div class="project-card">
-      <img src="nlp1 pic.png" alt="nlp">
+      <div class="project-images">
+        <img src="nlp1 pic.png" alt="nlp">
+      </div>
       <div class="project-content">
         <h4>Comparative Study of Deep Learning Models for Multi-Label Movie Genre Classification</h4>
-        <p>Implemented and compared two advanced NLP architectures for multi-label genre classification of movie plots. The first approach used a hybrid Bidirectional LSTM with Attention and GloVe embeddings, incorporating dynamic class weighting, focal loss, and threshold optimization to improve balance and recall. The second approach fine-tuned a BERT transformer with smooth dynamic class reweighting and learning rate scheduling, leveraging GPU acceleration for efficient training. Both models were trained on preprocessed text data and evaluated using F1-score, precision, and recall, highlighting trade-offs between interpretability and generalization. The project demonstrated strong skills in deep learning optimization, model comparison, and end-to-end NLP pipeline design using TensorFlow, PyTorch, and HuggingFace.</p>
+        <p><strong>Goal:</strong> To implement and compare deep learning architectures for multi-label text classification, evaluating trade-offs between model complexity and generalisation.</p>
+        <p><strong>Contribution:</strong> I implemented two full pipelines: a Bidirectional LSTM with Attention and GloVe embeddings incorporating focal loss, dynamic class weighting, and threshold optimisation, and a fine-tuned BERT model with smooth dynamic reweighting and learning rate scheduling. I evaluated both using F1-score, precision, and recall, analysing trade-offs between interpretability and performance across the full NLP pipeline.</p>        
         <div class="project-links">
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/04_Natural_Language_Processing/Multi-class_Multi-label_Movie_Genre_Classification" target="_blank">💻 Code</a>
         </div>
@@ -292,10 +353,13 @@ I’m passionate about technological advancement and driven to stay at the foref
     </div>
 
     <div class="project-card">
-      <img src="nlp2 pic.png" alt="robotics research">
+      <div class="project-images">
+        <img src="nlp2 pic.png" alt="robotics research">
+      </div>
       <div class="project-content">
         <h4>Meta-Learning Approach for Natural Language Inference</h4>
-        <p>Developed in collaboration with a colleague, this project focused on predicting hypothesis–premise relationships within Natural Language Inference (NLI) tasks. Through extensive research on the strengths and limitations of transformer-based models, we explored innovative strategies to improve reasoning accuracy. Building on this analysis, we proposed a meta-learning architecture that aggregates probability outputs from multiple fine-tuned transformers (BERT, RoBERTa, and ALBERT) using a neural meta-learner to enhance generalization and performance. I authored detailed model cards and a poster presentation explaining the design, ethical considerations, and interpretability aspects of both solutions. Additionally, I developed a clean, modular demo codebase that clearly separates training, validation, and inference, emphasizing reproducibility and practical deployment.</p>
+        <p><strong>Goal:</strong> To improve performance on Natural Language Inference tasks by combining multiple transformer models through a meta-learning architecture.</p>
+        <p><strong>Contribution:</strong> I co-developed a meta-learning system aggregating probability outputs from fine-tuned BERT, RoBERTa, and ALBERT using a neural meta-learner. My individual contributions included authoring model cards and a poster presentation covering design rationale, ethical considerations, and interpretability, as well as developing a modular demo codebase with clearly separated training, validation, and inference stages to prioritise reproducibility.</p>        
         <div class="project-links">
           <a href="Poster.pdf" target="_blank">🗺️ Poster</a>
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/04_Natural_Language_Processing/Innovative_NLI_hypothesis_premise" target="_blank">💻 Code</a>
@@ -311,11 +375,14 @@ I’m passionate about technological advancement and driven to stay at the foref
     <h3>Database Systems</h3>
 
     <div class="project-card">
-      <img src="databases pic.png" alt="Database Design">
+      <div class="project-images">
+        <img src="databases pic.png" alt="Database Design">
+      </div>
       <div class="project-content">
         <h4>Amazon-Style Relational Database Design and Implementation</h4>
-        <p>Designed and implemented a fully normalized relational SQL database for an Amazon-style logistics and retail system (Kilburnazon). The design process included creating an Entity Relationship Diagram (ERD) with 13 entities, performing normalization to 3NF, and developing a robust physical data model with clear primary–foreign key relationships. The implemented system allowed users to search and filter employees, retrieve emergency contacts, and add or update employee information efficiently. Queries were optimized for fast data retrieval and referential integrity. This project demonstrated skills in database design, SQL implementation, data normalization, and system integration, combining analytical design with practical optimization for scalable data handling.</p>
-      <div class="project-links">
+        <p><strong>Goal:</strong> To design and implement a fully normalised relational database for a large-scale logistics and retail system.</p>
+        <p><strong>Contribution:</strong> I produced an Entity Relationship Diagram covering 13 entities, performed normalisation to 3NF, and implemented the physical data model with robust primary–foreign key relationships in SQL. I built query functionality for employee search and filtering, emergency contact retrieval, and data updates, optimising queries for retrieval speed and referential integrity.</p>      
+        <div class="project-links">
           <a href="Designing Database - Iva Jorgusheska.pdf" target="_blank">📄 Report</a>
           <a href="https://youtu.be/GsokrmeoIPY" target="_blank">🎥 Video</a>
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/05_Database_Systems/Kilburnazon" target="_blank">💻 Code</a>
@@ -330,10 +397,13 @@ I’m passionate about technological advancement and driven to stay at the foref
     <h3>Distributed Systems and Networking</h3>
 
     <div class="project-card">
-      <img src="distributed 1 pic.png" alt="distributed systems">
+      <div class="project-images">
+        <img src="distributed 1 pic.png" alt="distributed systems">
+      </div>
       <div class="project-content">
         <h4>Distributed Messaging System for Healthcare Applications</h4>
-        <p>Designed and implemented a distributed messaging protocol supporting multiple concurrent clients for healthcare data communication. The system architecture enables dynamic user registration, private and broadcast messaging, and real-time synchronization using socket-based client–server interactions. The protocol ensures efficient state management through global socket tracking and user dictionaries, allowing reliable message routing and connection handling. Building upon earlier work, I extended the protocol to improve scalability, modularity, and fault tolerance while maintaining lightweight communication logic. This project deepened my understanding of network protocols, concurrency control, and server–client synchronization in distributed systems. </p>
+        <p><strong>Goal:</strong> To design a distributed messaging protocol supporting multiple concurrent clients for reliable healthcare data communication.</p>
+        <p><strong>Contribution:</strong> I implemented a socket-based client–server system enabling dynamic user registration, private messaging, and broadcast communication with real-time synchronisation. I managed global socket tracking and user dictionaries for reliable message routing, then extended the protocol in a second iteration to improve scalability, modularity, and fault tolerance.</p>        
         <div class="project-links">
           <a href="distributed 1 report.pdf" target="_blank">📄 Report</a>
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/06_Distributed_Systems_and_Networking/Distributed_Messaging_Healthcare" target="_blank">💻 Code</a>
@@ -341,29 +411,33 @@ I’m passionate about technological advancement and driven to stay at the foref
       </div>
     </div>
 
-    <div class="project-card">
+    <!-- <div class="project-card">
       <img src="distributed2 pic.png" alt="dist 2">
       <div class="project-content">
         <h4>Distributed Wedding Planner System (SOA-based Client–Server Application)</h4>
-        <p>Developed a distributed client–server system for automated wedding planning, coordinating hotel and band bookings through RESTful Web Services using HTTP and JSON. Implemented robust client logic in Python to handle concurrency, API delays, and random server unavailability while respecting request throttling limits. Designed a fault-tolerant booking strategy that maintained synchronization between independent services, dynamically cancelling mismatched reservations and rebooking earlier available slots. The system continuously adapted to changing availability data, demonstrating resilience against message loss and latency. This project enhanced my understanding of service-oriented architectures, API integration, and distributed fault handling under real-time constraints.</p>
+        <p><strong>Goal:</strong> To build a fault-tolerant distributed system that coordinates bookings across independent external services under real-time constraints.</p>
+        <p><strong>Contribution:</strong> I implemented the client-side logic in Python to handle API delays, random server unavailability, and request throttling. I designed a booking strategy that kept hotel and band reservations synchronised, dynamically cancelling mismatched bookings and rebooking earlier available slots, maintaining correctness under message loss and latency.</p>        
         <div class="project-links">
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/06_Distributed_Systems_and_Networking/Distributed_Wedidng_Planner" target="_blank">💻 Code</a>
         </div>
       </div>
     </div> 
-  </div>
+  </div> -->
 
   <!-- Group 7: Embedded Systems and Hardware Design-->
   <div class="project-group">
     <h3>Embedded Systems and Hardware Design</h3>
 
     <div class="project-card">
-      <img src="eng_image.jpeg" alt="embedded systems">
+      <div class="project-images">
+        <img src="eng_image.jpeg" alt="embedded systems">
+      </div>
       <div class="project-content">
         <h4>Mini Processor Design and FPGA-Based Interactive Game</h4>
-        <p>Designed and implemented a custom mini processor in Cadence, incorporating 4-bit, 8-bit, and 16-bit adders, logic gates, and control modules. The processor was synthesized and deployed on an FPGA board, where I developed and executed an assembly-level game titled “Convert to Decimal.” The board displays a binary number on LEDs, and the player inputs the corresponding decimal value using the hardware interface. The system provides real-time feedback with sound effects, traffic-light indicators for correct or incorrect answers, and a reward melody at the end of the game. This project strengthened my skills in digital design, FPGA deployment, and embedded system programming.</p>
+        <p><strong>Goal:</strong> To design a custom processor in hardware and deploy it on an FPGA to run an interactive assembly-level game.</p>
+        <p><strong>Contribution:</strong> I designed the processor in Cadence, incorporating 4-bit, 8-bit, and 16-bit adders, logic gates, and control modules. After synthesising and deploying it to an FPGA board, I programmed an assembly-level game ("Convert to Decimal") featuring LED output, hardware input, sound effects, traffic-light feedback indicators, and a reward melody — demonstrating the full path from digital design to an interactive embedded application.</p>        
         <div class="project-links">
-        <a href="YOUR_YOUTUBE_LINK" target="_blank">🎥 Video</a>
+        <a href="https://youtube.com/shorts/YBo1TfpkZ6M?feature=share" target="_blank">🎥 Video</a>
       </div>
       </div>
     </div>
@@ -374,21 +448,26 @@ I’m passionate about technological advancement and driven to stay at the foref
     <h3>Other Research & Innovation Projects</h3>
 
     <div class="project-card">
-  <img src="video_pic.png" alt="Robotics for sustainable development video">
+      <div class="project-images">
+        <img src="video_pic.png" alt="Robotics for sustainable development video">
+      </div>
   <div class="project-content">
     <h4>Robotics for Sustainable Development (UN SDGs Video Project)</h4>
-    <p>Produced a 5-minute educational video exploring how robotic systems can contribute to the United Nations Sustainable Development Goals (SDGs). The project involved researching service and industrial robotics applications across sectors, analysing how robots can support sustainability challenges, and developing an in-depth use case connecting robotics to a specific SDG. I also examined ethical considerations in the deployment of autonomous systems, drawing on frameworks such as IEEE Ethically Aligned Design. The final result was a concise graduate-level teaching resource designed to communicate technical, ethical, and societal dimensions of robotics clearly and effectively within a strict time constraint.</p>
-    
+    <p><strong>Goal:</strong> To produce an educational resource communicating how robotics can contribute to the UN Sustainable Development Goals, including ethical dimensions.</p>
+    <p><strong>Contribution:</strong> I researched robotic applications across sectors, developed an in-depth use case linking robotics to a specific SDG, and examined ethical considerations using frameworks such as IEEE Ethically Aligned Design. I then produced a concise 5-minute video designed as a graduate-level teaching resource, communicating technical, societal, and ethical dimensions clearly within a strict time constraint.</p>    
     <div class="project-links">
-      <a href="https://video.manchester.ac.uk/lectures/2848d96b-b50e-4104-86a5-96b57aacb513/3a159676-566e-4420-9cea-7bc24df3715a" target="_blank">🎥 Video</a>    </div>
+      <a href="https://youtu.be/ffjvgMt6LNo" target="_blank">🎥 Video</a>    </div>
   </div>
 </div>
 
     <div class="project-card">
-      <img src="filters pic.png" alt="distributed systems">
+      <div class="project-images">
+        <img src="filters pic.png" alt="distributed systems">
+      </div>
       <div class="project-content">
         <h4>Greening Solution for Environmental Pollution – Converting Waste Clothes into Smart Car Exhaust Filters</h4>
-        <p>I conducted an independent 86-page research project exploring the use of waste textiles and biomass as eco-friendly car exhaust filters to reduce CO, CO₂, and hydrocarbon emissions. Through 24 experiments on different fuel types, I demonstrated that waste-based filters could achieve up to 100% CO, 96% HC, and 79% CO₂ absorption efficiency, providing a sustainable and low-cost solution to both air pollution and textile waste. The project earned multiple international awards, including an Honourable Mention at Genius Olympiad 2019 (SUNY Oswego), Silver Medal at Inofair 2020 (USA), and Silver Medal at Euroinvent 2020 (Romania), recognizing its innovation and environmental impact.</p>
+        <p><strong>Goal:</strong> To investigate whether waste textiles and biomass could serve as effective, low-cost car exhaust filters to reduce harmful emissions.</p>
+        <p><strong>Contribution:</strong> I independently designed and conducted 24 experiments across different fuel types, measuring CO, CO₂, and hydrocarbon absorption efficiency — achieving up to 100% CO, 96% HC, and 79% CO₂ absorption. I authored the full 86-page research report and presented the work at international competitions, receiving an Honourable Mention at Genius Olympiad 2019, Silver at Inofair 2020, and Silver at Euroinvent 2020.</p>        
         <div class="project-links">
           <a href="filters report.pdf" target="_blank">📄 Report</a>
           <a href="Final Version Poster Euroinvent.png" target="_blank">🗺️ Poster</a>
@@ -396,18 +475,19 @@ I’m passionate about technological advancement and driven to stay at the foref
       </div>
     </div>
 
-    <div class="project-card">
+    <!-- <div class="project-card">
       <img src="rosemary pic.png" alt="rosemary">
       <div class="project-content">
         <h4>Antimicrobial Bio-Film from Rosemary</h4>
-        <p>As part of a team research project, we explored sustainable alternatives to plastic food packaging by developing biodegradable antimicrobial bio-films made from starch, rosemary extract, and natural plasticizers such as sorbitol and glycerol. We produced and analyzed multiple formulations with varying acetic acid concentrations, testing their flexibility, strength, and antimicrobial properties. The resulting bio-films successfully replicated the qualities of commercial plastics while being eco-friendly and food-safe. I co-authored a 23-page report detailing the research methodology and results. The project received several international recognitions, including Silver at Euroinvent 2020 (Romania), Bronze at Inofair 2020 (USA), Bronze at Vilipo 2021 (Lithuania), and Silver at ASEF 2021 (Albania).</p>
+        <p><strong>Goal:</strong> To develop a biodegradable, antimicrobial alternative to plastic food packaging using natural ingredients.</p>
+        <p><strong>Contribution:</strong> As part of a team, I helped produce and test multiple bio-film formulations combining starch, rosemary extract, sorbitol, and glycerol with varying acetic acid concentrations, evaluating each for flexibility, tensile strength, and antimicrobial effectiveness. I co-authored the 23-page research report. The project received international recognition including Silver at Euroinvent 2020, Bronze at Inofair 2020, Bronze at Vilipo 2021, and Silver at ASEF 2021.</p>        
         <div class="project-links">
           <a href="rosemary pdf.pdf" target="_blank">📄 Report</a>
           <a href="rosemary poster.pdf" target="_blank">🗺️ Poster</a>
         </div>
       </div>
     </div> 
-  </div>
+  </div> -->
 
 </div>
 </section>
