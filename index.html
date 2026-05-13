@@ -584,5 +584,36 @@ I’m passionate about technological advancement and driven to stay at the foref
 
 
   </div>
+
+  <!-- Lightbox overlay -->
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="Expanded view">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.project-images img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+
+  document.getElementById('lightbox-close').addEventListener('click', () => {
+    lightbox.classList.remove('open');
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+</script>
 </body>
 </html>
