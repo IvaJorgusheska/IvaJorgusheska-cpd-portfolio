@@ -131,7 +131,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="autonomousrobot3.png" alt="Mapping">
       </div>
       <div class="project-content">
-        <h4>Autonomous Robotic System for Object Search, Localisation, and Manipulation</h4>
+        <h4 id="project-autonomous-robot">Autonomous Robotic System for Object Search, Localisation, and Manipulation</h4>
         <p><strong>Goal:</strong> To develop a full-stack autonomous robot capable of mapping, navigating, detecting, and manipulating objects in a real-world environment.</p>
         <p><strong>Contribution:</strong> I led the vision and manipulation subsystems, implementing RGB-D perception, 3D object localisation, and coordinated grasp execution within a distributed ROS2 architecture. I also designed key elements of the overall system architecture, including the finite-state machine for mission planning, inter-module communication protocols, and real-time data flow between perception, navigation, and actuation. Beyond implementation, I drove the engineering process — writing requirements specifications, verification matrices, and iterating on the design based on stakeholder feedback from professors acting as clients.</p>
         <div class="project-links">
@@ -151,7 +151,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="fscil2.png" alt="Results Analysis">
       </div>
       <div class="project-content">
-        <h4>Few-Shot Continual Learning for Robotics with CLIP</h4>
+        <h4 id="project-fscil">Few-Shot Continual Learning for Robotics with CLIP</h4>
         <p><strong>Goal:</strong> To develop a Few-Shot Continual Learning approach that enables robots to learn new visual categories from very few examples without forgetting previously learned ones.</p>
         <p><strong>Contribution:</strong> Following a comprehensive literature review, I identified weaknesses in the visual representation component of existing CLIP-based incremental learning pipelines. I then designed a novel method based on layer-wise knowledge distillation for CLIP Vision Transformers, and explored complementary techniques including LoRA adaptation, teacher input augmentation, and optimal transport for improved representation alignment. I was responsible for the full research cycle: literature synthesis, experimental design, implementation, benchmarking, and dataset curation.</p>      </div>
     </div>
@@ -163,7 +163,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="marl3.png" alt="Custom Environments">
       </div>
       <div class="project-content">
-        <h4>Multi-Agent Reinforcement Learning for Cooperative Autonomous Navigation and Pursuit in Drone Swarms</h4>
+        <h4 id="project-marl-drones">Multi-Agent Reinforcement Learning for Cooperative Autonomous Navigation and Pursuit in Drone Swarms</h4>
         <p><strong>Goal:</strong> To build a MARL system enabling a swarm of autonomous drones to cooperatively pursue a target, and to validate it on real hardware.</p>
         <p><strong>Contribution:</strong> I designed and built the entire framework from scratch — including a custom simulation environment, a modular PPO-based training pipeline, and real-time visualisation tools. I extended the baseline PPO algorithm to support partial observability and stable multi-agent cooperation, then deployed the trained policies onto physical Crazyflie 2.1 drones, achieving robust real-world swarm coordination.</p>        
         <div class="project-links">
@@ -182,7 +182,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="controller4.png" alt="UAV Feedback Control with PID and DOBC">
       </div>
       <div class="project-content">
-        <h4>UAV Position Stabilisation with PID and Disturbance Observer-Based Control (DOBC)</h4>
+        <h4 id="project-uav-controller">UAV Position Stabilisation with PID and Disturbance Observer-Based Control (DOBC)</h4>
         <p><strong>Goal:</strong> To design, tune, and validate a feedback controller for 3D position stabilisation of a UAV, combining a PID baseline with DOBC as an advanced disturbance rejection method, tested in both simulation and on a real DJI Tello quadcopter.</p>
         <p><strong>Contribution:</strong>  I designed a cascade architecture where a position PID generates velocity setpoints corrected by a DOBC layer to reject disturbances such as wind and motor asymmetry. The observer estimates disturbances from the deviation between actual and modelled velocity, with a proximity gate restricting corrections to the hold phase to prevent interference during approach. Gains were tuned via Ziegler–Nichols sequential isolation, and real-drone validation used Vicon motion capture across varied speed and gain conditions. Key findings were that the 10 Hz control rate limits derivative damping during fast approaches, and that an elevated DOBC gate caused yaw integral saturation through an unmodelled coupling, identifying yaw–DOBC decoupling as future work.</p>
           <a href="https://youtu.be/EdtELk0f5oE" target="_blank">🎥 Video</a>
@@ -199,7 +199,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <!-- <img src="lidar4.png" alt="LiDAR Characterisation"> -->
       </div>
       <div class="project-content">
-        <h4>Characterisation of the SLAMTEC RPLIDAR A2M12 for Autonomous Mobile Robot Perception</h4>
+        <h4 id="project-lidar">Characterisation of the SLAMTEC RPLIDAR A2M12 for Autonomous Mobile Robot Perception</h4>
         <p><strong>Goal:</strong> To empirically characterise the SLAMTEC RPLIDAR A2M12 lidar unit across key performance metrics — range, accuracy, vertical tolerance, spatial resolution, and small-object detection — and translate the findings into concrete integration recommendations for the Leo Rover's autonomous perception stack.</p>
         <p><strong>Contribution:</strong> I co-designed and executed a structured experimental campaign characterising the RPLIDAR A2M12 across range, accuracy, vertical tolerance, spatial resolution, and small-object detection, using RoboStudio for raw triangulation access with five repetitions per test. Key findings were that surface colour had negligible effect on range indoors; distance was systematically overestimated beyond 3 m; vertical sensing was extremely narrow (0.2°–0.6°), creating blind zones that shrank with distance; spatial resolution improved 40% at 5 Hz; and objects under ~20 mm became undetectable below one metre. These results informed recommendations for Leo Rover integration: applying a short-range bias correction for SLAM, increasing obstacle margins for slender objects, and mounting the lidar with a slight downward pitch to reduce vertical blind zones.</p>
         <div class="project-links">
@@ -215,7 +215,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="cogrob3.png" alt="robotics research">
       </div>
       <div class="project-content">
-        <h4>Deep Learning in Cognitive Robotics – UAV Applications and Vision Models </h4>
+        <h4 id="project-cog-robotics">Deep Learning in Cognitive Robotics – UAV Applications and Vision Models </h4>
         <p><strong>Goal:</strong> To critically survey the state of deep learning for autonomous UAVs and complement the analysis with hands-on benchmarking experiments.</p>
         <p><strong>Contribution:</strong> I produced a comprehensive survey-style analysis covering DNNs in robotic vision, navigation, and decision-making for UAVs, critically evaluating architectures such as CNNs, LSTMs, and RL frameworks across tasks including obstacle avoidance, surveillance, and multi-UAV coordination. I assessed both technical limitations and ethical considerations, and ran benchmarking experiments comparing MLP, CNN, and ResNet-18 on CIFAR-100 to ground the analysis practically.</p>        
         <div class="project-links">
@@ -235,7 +235,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="ml pic.png" alt="ml report">
       </div>
       <div class="project-content">
-        <h4>Machine Learning Laboratory – Linear Classification and Optimization Analysis</h4>
+        <h4 id="project-ml-lab">Machine Learning Laboratory – Linear Classification and Optimization Analysis</h4>
         <p><strong>Goal:</strong> To develop a rigorous mathematical understanding of linear classification and gradient-based optimisation, and apply it to a real neural network task.</p>
         <p><strong>Contribution:</strong> I derived the gradient of the hinge loss with L2 regularisation from first principles, expressed it in vectorised form, and formulated the weight update analytically. I then systematically analysed how learning rate affects convergence and accuracy, and applied these principles to a neural network for air quality prediction, comparing SGD and ADAM optimisers and validating convergence behaviour empirically.</p>
         <div class="project-links">
@@ -298,7 +298,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="cogrob2_3.png" alt="Robotic vision classification project">
       </div>
       <div class="project-content">
-        <h4>Robust Object Classification for Robotics Using Classical Descriptors, CNNs, and Transfer Learning</h4>
+        <h4 id="project-object-classification">Robust Object Classification for Robotics Using Classical Descriptors, CNNs, and Transfer Learning</h4>
         <p><strong>Goal:</strong> To systematically compare classical and deep learning approaches to object recognition across datasets relevant to robotic perception.</p>
         <p><strong>Contribution:</strong> I designed and implemented multiple end-to-end recognition pipelines: SIFT/ORB with Bag-of-Words and SVMs, custom CNNs, fine-tuned ResNet-18 and MobileNetV2, and a multi-backbone ensemble model. I conducted hyperparameter optimisation and ablation studies across CIFAR-100, RGB-D Object, and iCubWorld datasets, identifying the conditions under which classical pipelines remain competitive versus when deep learning becomes necessary in robotic perception.</p>        
         <div class="project-links">
@@ -373,7 +373,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="nlp3.png" alt="nlp">
       </div>
       <div class="project-content">
-        <h4>Meta-Learning Approach for Natural Language Inference</h4>
+        <h4 id="project-nli">Meta-Learning Approach for Natural Language Inference</h4>
         <p><strong>Goal:</strong> To improve performance on Natural Language Inference tasks by combining multiple transformer models through a meta-learning architecture.</p>
         <p><strong>Contribution:</strong> I co-developed a meta-learning system aggregating probability outputs from fine-tuned BERT, RoBERTa, and ALBERT using a neural meta-learner. My individual contributions included authoring model cards and a poster presentation covering design rationale, ethical considerations, and interpretability, as well as developing a modular demo codebase with clearly separated training, validation, and inference stages to prioritise reproducibility.</p>        
         <div class="project-links">
@@ -397,7 +397,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="db3.png" alt="Database Design">
       </div>
       <div class="project-content">
-        <h4>Amazon-Style Relational Database Design and Implementation</h4>
+        <h4 id="project-database">Amazon-Style Relational Database Design and Implementation</h4>
         <p><strong>Goal:</strong> To design and implement a fully normalised relational database for a large-scale logistics and retail system.</p>
         <p><strong>Contribution:</strong> I produced an Entity Relationship Diagram covering 13 entities, performed normalisation to 3NF, and implemented the physical data model with robust primary–foreign key relationships in SQL. I built query functionality for employee search and filtering, emergency contact retrieval, and data updates, optimising queries for retrieval speed and referential integrity.</p>      
         <div class="project-links">
@@ -419,7 +419,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="distributed 1 pic.png" alt="distributed systems">
       </div>
       <div class="project-content">
-        <h4>Distributed Messaging System for Healthcare Applications</h4>
+        <h4 id="project-distributed">Distributed Messaging System for Healthcare Applications</h4>
         <p><strong>Goal:</strong> To design a distributed messaging protocol supporting multiple concurrent clients for reliable healthcare data communication.</p>
         <p><strong>Contribution:</strong> I implemented a socket-based client–server system enabling dynamic user registration, private messaging, and broadcast communication with real-time synchronisation. I managed global socket tracking and user dictionaries for reliable message routing, then extended the protocol in a second iteration to improve scalability, modularity, and fault tolerance.</p>        
         <div class="project-links">
@@ -453,7 +453,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="fpga3.png" alt="embedded systems">
       </div>
       <div class="project-content">
-        <h4>Mini Processor Design and FPGA-Based Interactive Game</h4>
+        <h4 id="project-fpga">Mini Processor Design and FPGA-Based Interactive Game</h4>
         <p><strong>Goal:</strong> To design a custom processor in hardware and deploy it on an FPGA to run an interactive assembly-level game.</p>
         <p><strong>Contribution:</strong> I designed the processor in Cadence, incorporating 4-bit, 8-bit, and 16-bit adders, logic gates, and control modules. After synthesising and deploying it to an FPGA board, I programmed an assembly-level game ("Convert to Decimal") featuring LED output, hardware input, sound effects, traffic-light feedback indicators, and a reward melody — demonstrating the full path from digital design to an interactive embedded application.</p>        
         <div class="project-links">
@@ -474,7 +474,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="un3.png" alt="Robotics for sustainable development video">
       </div>
   <div class="project-content">
-    <h4>Robotics for Sustainable Development (UN SDGs Video Project)</h4>
+    <h4 id="project-sdgs">Robotics for Sustainable Development (UN SDGs Video Project)</h4>
     <p><strong>Goal:</strong> To produce an educational resource communicating how robotics can contribute to the UN Sustainable Development Goals, including ethical dimensions.</p>
     <p><strong>Contribution:</strong> I researched robotic applications across sectors, developed an in-depth use case linking robotics to a specific SDG, and examined ethical considerations using frameworks such as IEEE Ethically Aligned Design. I then produced a concise 5-minute video designed as a graduate-level teaching resource, communicating technical, societal, and ethical dimensions clearly within a strict time constraint.</p>    
     <div class="project-links">
@@ -489,7 +489,7 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="filters3.png" alt="Filters">
       </div>
       <div class="project-content">
-        <h4>Greening Solution for Environmental Pollution – Converting Waste Clothes into Smart Car Exhaust Filters</h4>
+        <h4 id="project-filters">Greening Solution for Environmental Pollution – Converting Waste Clothes into Smart Car Exhaust Filters</h4>
         <p><strong>Goal:</strong> To investigate whether waste textiles and biomass could serve as effective, low-cost car exhaust filters to reduce harmful emissions.</p>
         <p><strong>Contribution:</strong> I independently designed and conducted 24 experiments across different fuel types, measuring CO, CO₂, and hydrocarbon absorption efficiency — achieving up to 100% CO, 96% HC, and 79% CO₂ absorption. I authored the full 86-page research report and presented the work at international competitions, receiving an Honourable Mention at Genius Olympiad 2019, Silver at Inofair 2020, and Silver at Euroinvent 2020.</p>        
         <div class="project-links">
