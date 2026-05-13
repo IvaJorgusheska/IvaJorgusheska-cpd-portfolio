@@ -470,8 +470,8 @@ section p {
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
-h4[id] {
-  scroll-margin-top: 200px;
+[id] {
+  scroll-margin-top: 2000px;
 }
 
 #lightbox-close {
