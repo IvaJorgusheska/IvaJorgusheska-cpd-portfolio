@@ -177,15 +177,14 @@ I’m passionate about technological advancement and driven to stay at the foref
     <div class="project-card">
       <div class="project-images">
         <img src="controller1.png" alt="UAV Feedback Control with PID and DOBC">
-        <img src="controller2.png" alt="UAV Feedback Control with PID and DOBC">
+        <!-- <img src="controller2.png" alt="UAV Feedback Control with PID and DOBC"> -->
         <img src="controller3.png" alt="UAV Feedback Control with PID and DOBC">
         <img src="controller4.png" alt="UAV Feedback Control with PID and DOBC">
       </div>
       <div class="project-content">
         <h4>UAV Position Stabilisation with PID and Disturbance Observer-Based Control (DOBC)</h4>
         <p><strong>Goal:</strong> To design, tune, and validate a feedback controller for 3D position stabilisation of a UAV, combining a PID baseline with DOBC as an advanced disturbance rejection method, tested in both simulation and on a real DJI Tello quadcopter.</p>
-        <p><strong>Contribution:</strong> I designed a cascade architecture where a position PID generates velocity setpoints, and a DOBC layer corrects them for persistent disturbances such as wind, motor asymmetry, and aerodynamic drag. The observer models drone velocity as a first-order lag and estimates the disturbance as the difference between actual and modelled velocity, smoothed via an EMA filter. I implemented a proximity gate so DOBC corrections only activate during the hold phase (error below 0.5 m), preventing observer lag from interfering with the PID during approach. Tuning followed Ziegler-Nichols sequential isolation — each gain was varied independently to the stability boundary, with the derivative gain derated to half the Z-N prediction to avoid noise amplification. Real-drone experiments used Vicon motion capture to quantify hold error, and I systematically varied speed, DOBC gain, and gate thresholds across sessions to identify performance limits. Key findings included that the D term at 10 Hz cannot damp momentum from fast approaches, and that raising the DOBC gate caused yaw integral saturation by coupling disturbance corrections into the yaw channel — an unmodelled interaction that pointed to the need for yaw-DOBC decoupling in future work.</p>
-        <div class="project-links">
+        <p><strong>Contribution:</strong>  I designed a cascade architecture where a position PID generates velocity setpoints corrected by a DOBC layer to reject disturbances such as wind and motor asymmetry. The observer estimates disturbances from the deviation between actual and modelled velocity, with a proximity gate restricting corrections to the hold phase to prevent interference during approach. Gains were tuned via Ziegler–Nichols sequential isolation, and real-drone validation used Vicon motion capture across varied speed and gain conditions. Key findings were that the 10 Hz control rate limits derivative damping during fast approaches, and that an elevated DOBC gate caused yaw integral saturation through an unmodelled coupling, identifying yaw–DOBC decoupling as future work.</p>
           <a href="https://youtu.be/EdtELk0f5oE" target="_blank">🎥 Video</a>
           
         </div>
@@ -197,12 +196,12 @@ I’m passionate about technological advancement and driven to stay at the foref
         <img src="lidar1.png" alt="LiDAR Characterisation">
         <img src="lidar2.png" alt="LiDAR Characterisation">
         <img src="lidar3.png" alt="LiDAR Characterisation">
-        <img src="lidar4.png" alt="LiDAR Characterisation">
+        <!-- <img src="lidar4.png" alt="LiDAR Characterisation"> -->
       </div>
       <div class="project-content">
         <h4>Characterisation of the SLAMTEC RPLIDAR A2M12 for Autonomous Mobile Robot Perception</h4>
         <p><strong>Goal:</strong> To empirically characterise the SLAMTEC RPLIDAR A2M12 lidar unit across key performance metrics — range, accuracy, vertical tolerance, spatial resolution, and small-object detection — and translate the findings into concrete integration recommendations for the Leo Rover's autonomous perception stack.</p>
-        <p><strong>Contribution:</strong> I co-designed and executed a structured experimental campaign using SLAMTEC RoboStudio for direct access to raw triangulation returns, with all experiments repeated five times for reliability. I contributed to geometric calibration to establish a precise baseline, and ran experiments covering minimum and maximum range on white and black targets, distance accuracy from 0.5 to 5 metres, vertical detection angle by converting target dropout height to angle, spatial resolution at both 10 and 5 Hz scan rates, and small-object detectability using progressively smaller reflectors. I then analysed the results against our initial hypotheses and derived practical implications: white and black surfaces produced near-identical ranges indoors, contradicting the reflectivity hypothesis but confirming consistent obstacle visibility; distance was overestimated systematically, remaining reliable within 3 m but drifting at longer range; vertical sensing was extremely narrow (0.2°–0.6°) and shrank with distance, creating blind zones for obstacles above or below the scan plane; spatial resolution was spot-size-limited at close range and sampling-limited at long range, with a 40% improvement at 5 Hz; and small objects under ~20 mm became undetectable below one metre. Based on these findings, I contributed to recommendations for the Leo Rover integration: applying a short-range bias correction for SLAM, increasing obstacle margins for slender objects, and mounting the lidar with a slight downward pitch to reduce vertical blind zones.</p>
+        <p><strong>Contribution:</strong> I co-designed and executed a structured experimental campaign characterising the RPLIDAR A2M12 across range, accuracy, vertical tolerance, spatial resolution, and small-object detection, using RoboStudio for raw triangulation access with five repetitions per test. Key findings were that surface colour had negligible effect on range indoors; distance was systematically overestimated beyond 3 m; vertical sensing was extremely narrow (0.2°–0.6°), creating blind zones that shrank with distance; spatial resolution improved 40% at 5 Hz; and objects under ~20 mm became undetectable below one metre. These results informed recommendations for Leo Rover integration: applying a short-range bias correction for SLAM, increasing obstacle margins for slender objects, and mounting the lidar with a slight downward pitch to reduce vertical blind zones.</p>
         <div class="project-links">
           <a href="https://youtu.be/Q7WIki8TnUo" target="_blank">🎥 Video</a>
         </div>
@@ -294,7 +293,9 @@ I’m passionate about technological advancement and driven to stay at the foref
 
     <div class="project-card">
       <div class="project-images">
-        <img src="report_pic.png" alt="Robotic vision classification project">
+        <img src="cogrob2_1.png" alt="Robotic vision classification project">
+        <img src="cogrob2_2.png" alt="Robotic vision classification project">
+        <img src="cogrob2_3.png" alt="Robotic vision classification project">
       </div>
       <div class="project-content">
         <h4>Robust Object Classification for Robotics Using Classical Descriptors, CNNs, and Transfer Learning</h4>
@@ -351,7 +352,7 @@ I’m passionate about technological advancement and driven to stay at the foref
   <div class="project-group">
     <h3>Natural Language Processing</h3>
 
-    <div class="project-card">
+    <!-- <div class="project-card">
       <div class="project-images">
         <img src="nlp1 pic.png" alt="nlp">
       </div>
@@ -363,11 +364,13 @@ I’m passionate about technological advancement and driven to stay at the foref
           <a href="https://github.com/ivajorgusheska/iva-portfolio-projects/tree/main/04_Natural_Language_Processing/Multi-class_Multi-label_Movie_Genre_Classification" target="_blank">💻 Code</a>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="project-card">
       <div class="project-images">
-        <img src="nlp2 pic.png" alt="robotics research">
+        <img src="nlp1.png" alt="nlp">
+        <img src="nlp2.png" alt="nlp">
+        <img src="nlp3.png" alt="nlp">
       </div>
       <div class="project-content">
         <h4>Meta-Learning Approach for Natural Language Inference</h4>
@@ -390,6 +393,8 @@ I’m passionate about technological advancement and driven to stay at the foref
     <div class="project-card">
       <div class="project-images">
         <img src="databases pic.png" alt="Database Design">
+        <img src="db2.png" alt="Database Design">
+        <img src="db3.png" alt="Database Design">
       </div>
       <div class="project-content">
         <h4>Amazon-Style Relational Database Design and Implementation</h4>
@@ -444,6 +449,8 @@ I’m passionate about technological advancement and driven to stay at the foref
     <div class="project-card">
       <div class="project-images">
         <img src="eng_image.jpeg" alt="embedded systems">
+        <img src="fpga1.png" alt="embedded systems">
+        <img src="fpga3.png" alt="embedded systems">
       </div>
       <div class="project-content">
         <h4>Mini Processor Design and FPGA-Based Interactive Game</h4>
@@ -462,7 +469,9 @@ I’m passionate about technological advancement and driven to stay at the foref
 
     <div class="project-card">
       <div class="project-images">
-        <img src="video_pic.png" alt="Robotics for sustainable development video">
+        <img src="un1.png" alt="Robotics for sustainable development video">
+        <img src="un2.png" alt="Robotics for sustainable development video">
+        <img src="un3.png" alt="Robotics for sustainable development video">
       </div>
   <div class="project-content">
     <h4>Robotics for Sustainable Development (UN SDGs Video Project)</h4>
@@ -475,7 +484,9 @@ I’m passionate about technological advancement and driven to stay at the foref
 
     <div class="project-card">
       <div class="project-images">
-        <img src="filters pic.png" alt="distributed systems">
+        <img src="filters pic.png" alt="Filters">
+        <img src="filters2.png" alt="Filters">
+        <img src="filters3.png" alt="Filters">
       </div>
       <div class="project-content">
         <h4>Greening Solution for Environmental Pollution – Converting Waste Clothes into Smart Car Exhaust Filters</h4>
